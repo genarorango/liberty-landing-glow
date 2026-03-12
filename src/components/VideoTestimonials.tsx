@@ -23,11 +23,11 @@ const videos = [
 const VideoTestimonials = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
-  const [activeIndex, setActiveIndex] = useState(0);
   const [playing, setPlaying] = useState<number | null>(null);
+  const [page, setPage] = useState(0);
 
-  const prev = () => setActiveIndex((i) => (i === 0 ? videos.length - 1 : i - 1));
-  const next = () => setActiveIndex((i) => (i === videos.length - 1 ? 0 : i + 1));
+  const prev = () => setPage((p) => (p === 0 ? Math.ceil(videos.length / 3) - 1 : p - 1));
+  const next = () => setPage((p) => (p >= Math.ceil(videos.length / 3) - 1 ? 0 : p + 1));
 
   return (
     <section ref={ref} className="py-20 md:py-28 bg-navy-deep">
@@ -45,58 +45,48 @@ const VideoTestimonials = () => {
           </p>
         </motion.div>
 
-        <div className="flex items-center justify-center gap-4 md:gap-8">
-          <button onClick={prev} className="p-2 rounded-full border border-border hover:border-primary/50 transition-colors text-muted-foreground hover:text-foreground">
+        <div className="flex items-center justify-center gap-4">
+          <button onClick={prev} className="p-2 rounded-full border border-border hover:border-primary/50 transition-colors text-muted-foreground hover:text-foreground hidden md:block">
             <ChevronLeft size={24} />
           </button>
 
-          <div className="flex gap-4 md:gap-6 overflow-hidden max-w-4xl">
-            {videos.map((v, i) => {
-              const isActive = i === activeIndex;
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={inView ? {
-                    opacity: isActive ? 1 : 0.4,
-                    scale: isActive ? 1 : 0.85,
-                    display: Math.abs(i - activeIndex) <= 1 || (activeIndex === 0 && i === videos.length - 1) || (activeIndex === videos.length - 1 && i === 0) ? "block" : "none",
-                  } : {}}
-                  transition={{ duration: 0.4 }}
-                  className={`flex-shrink-0 w-64 md:w-72 ${!isActive ? "hidden md:block" : ""}`}
-                >
-                  {/* Phone frame */}
-                  <div className="rounded-[2rem] border-2 border-border bg-card overflow-hidden">
-                    <div className="aspect-[9/16] relative">
-                      {playing === i ? (
-                        <iframe
-                          src={v.embedUrl}
-                          className="w-full h-full"
-                          allow="autoplay; encrypted-media"
-                          allowFullScreen
-                        />
-                      ) : (
-                        <div
-                          className="w-full h-full bg-secondary flex items-center justify-center cursor-pointer group"
-                          onClick={() => setPlaying(i)}
-                        >
-                          <div className="w-16 h-16 rounded-full gradient-red flex items-center justify-center group-hover:scale-110 transition-transform glow-red">
-                            <Play size={28} className="text-primary-foreground ml-1" />
-                          </div>
-                        </div>
-                      )}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full">
+            {videos.map((v, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.2 + i * 0.15 }}
+                className="gradient-card rounded-xl border border-border overflow-hidden hover:border-primary/30 transition-all card-glow"
+              >
+                <div className="aspect-video relative">
+                  {playing === i ? (
+                    <iframe
+                      src={v.embedUrl}
+                      className="w-full h-full"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <div
+                      className="w-full h-full bg-secondary flex items-center justify-center cursor-pointer group"
+                      onClick={() => setPlaying(i)}
+                    >
+                      <div className="w-14 h-14 rounded-full gradient-red flex items-center justify-center group-hover:scale-110 transition-transform glow-red">
+                        <Play size={24} className="text-primary-foreground ml-1" />
+                      </div>
                     </div>
-                    <div className="p-4">
-                      <h3 className="font-semibold text-sm">{v.title}</h3>
-                      <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{v.desc}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
+                  )}
+                </div>
+                <div className="p-5">
+                  <h3 className="font-semibold text-foreground">{v.title}</h3>
+                  <p className="text-sm text-muted-foreground mt-2 leading-relaxed line-clamp-2">{v.desc}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
 
-          <button onClick={next} className="p-2 rounded-full border border-border hover:border-primary/50 transition-colors text-muted-foreground hover:text-foreground">
+          <button onClick={next} className="p-2 rounded-full border border-border hover:border-primary/50 transition-colors text-muted-foreground hover:text-foreground hidden md:block">
             <ChevronRight size={24} />
           </button>
         </div>

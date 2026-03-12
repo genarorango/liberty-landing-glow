@@ -48,7 +48,7 @@ const Navbar = () => {
 
         <div className="hidden md:block">
           <a
-            href="https://libertyfunding.us"
+            href="https://libertyfunding.us/start779500-1722"
             target="_blank"
             rel="noopener noreferrer"
             className="gradient-red text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
@@ -82,7 +82,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="https://libertyfunding.us"
+                href="https://libertyfunding.us/start779500-1722"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="gradient-red text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold text-center"

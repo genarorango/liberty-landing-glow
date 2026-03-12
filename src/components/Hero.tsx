@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 
+const CTA_URL = "https://libertyfunding.us/start779500-1722";
+
 const badges = [
   { amount: "$65,000", top: "8%", left: "55%", delay: 0.5 },
   { amount: "$80,000", top: "20%", right: "0%", delay: 0.8 },
@@ -19,10 +21,13 @@ const trustItems = [
 
 const Hero = () => {
   return (
-    <section id="home" className="gradient-hero min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="home" className="gradient-hero min-h-screen flex items-center pt-20 pb-16 overflow-hidden relative">
+      {/* Aura orbs */}
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(8 100% 40% / 0.18), transparent 70%)", filter: "blur(100px)" }} />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(8 100% 40% / 0.15), transparent 70%)", filter: "blur(100px)" }} />
+
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          {/* Left */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -37,7 +42,7 @@ const Hero = () => {
               We handle everything from application to approval. You focus on growing your business while we secure the capital you need — no interest, no equity required.
             </p>
             <a
-              href="https://libertyfunding.us"
+              href={CTA_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 gradient-red text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:opacity-90 transition-all glow-red"
@@ -61,9 +66,7 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Right — Photo + floating badges */}
           <div className="relative flex justify-center items-center min-h-[400px] lg:min-h-[500px]">
-            {/* Photo placeholder */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -79,7 +82,6 @@ const Hero = () => {
               </div>
             </motion.div>
 
-            {/* Floating badges */}
             {badges.map((b, i) => (
               <motion.div
                 key={i}

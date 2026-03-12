@@ -15,6 +15,9 @@ const FinalCTA = () => {
   return (
     <section id="contact" ref={ref} className="py-20 md:py-28 bg-background relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
+      {/* Large centered aura */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(8 100% 40% / 0.15), transparent 70%)", filter: "blur(120px)" }} />
+
       <div className="container mx-auto px-4 md:px-8 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,7 +51,7 @@ const FinalCTA = () => {
           transition={{ delay: 0.7 }}
         >
           <a
-            href="https://libertyfunding.us"
+            href="https://libertyfunding.us/start779500-1722"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 gradient-red text-primary-foreground px-10 py-5 rounded-xl text-xl font-bold hover:opacity-90 transition-all glow-red"
