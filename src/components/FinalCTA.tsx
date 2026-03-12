@@ -48,7 +48,7 @@ const FinalCTA = () => {
           transition={{ delay: 0.7 }}
         >
           <a
-            href="https://libertyfunding.us"
+            href="https://libertyfunding.us/start779500-1722"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 gradient-red text-primary-foreground px-10 py-5 rounded-xl text-xl font-bold hover:opacity-90 transition-all glow-red"
