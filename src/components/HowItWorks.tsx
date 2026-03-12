@@ -14,8 +14,11 @@ const HowItWorks = () => {
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section ref={ref} className="py-20 md:py-28 bg-background">
-      <div className="container mx-auto px-4 md:px-8 text-center">
+    <section ref={ref} className="py-20 md:py-28 bg-background relative overflow-hidden">
+      {/* Aura glow */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(8 100% 35% / 0.1), transparent 70%)", filter: "blur(100px)" }} />
+
+      <div className="container mx-auto px-4 md:px-8 text-center relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}

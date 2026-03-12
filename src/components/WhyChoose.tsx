@@ -8,13 +8,41 @@ const cards = [
   { icon: Clock, title: "Flexible Terms", desc: "Choose from various funding options with terms that work for your business growth timeline." },
 ];
 
+const floatingItems = Array.from({ length: 20 }, (_, i) => ({
+  left: `${Math.random() * 100}%`,
+  animationDelay: `${Math.random() * -30}s`,
+  animationDuration: `${20 + Math.random() * 15}s`,
+  size: 16 + Math.random() * 8,
+  opacity: 0.04 + Math.random() * 0.04,
+}));
+
 const WhyChoose = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section ref={ref} className="py-20 md:py-28 bg-navy-deep">
-      <div className="container mx-auto px-4 md:px-8 text-center">
+    <section ref={ref} className="py-20 md:py-28 bg-navy-deep relative overflow-hidden">
+      {/* Floating dollar symbols */}
+      <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
+        {floatingItems.map((item, i) => (
+          <span
+            key={i}
+            className="absolute animate-float-up text-primary/80"
+            style={{
+              left: item.left,
+              bottom: `-${item.size}px`,
+              animationDelay: item.animationDelay,
+              animationDuration: item.animationDuration,
+              fontSize: `${item.size}px`,
+              opacity: item.opacity,
+            }}
+          >
+            $
+          </span>
+        ))}
+      </div>
+
+      <div className="container mx-auto px-4 md:px-8 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}

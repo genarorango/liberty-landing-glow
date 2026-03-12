@@ -32,7 +32,7 @@ const WhatWeDo = () => {
               "We build structure before capital is pursued."
             </p>
             <a
-              href="https://libertyfunding.us"
+              href="https://libertyfunding.us/start779500-1722"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 gradient-red text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all"

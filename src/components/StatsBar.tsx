@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const stats = [
@@ -14,8 +13,11 @@ const StatsBar = () => {
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section ref={ref} className="bg-secondary/50 border-y border-border py-12">
-      <div className="container mx-auto px-4 md:px-8">
+    <section ref={ref} className="bg-secondary/50 border-y border-border py-12 relative overflow-hidden">
+      {/* Aura glow */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(8 100% 40% / 0.1), transparent 70%)", filter: "blur(80px)" }} />
+
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((s, i) => (
             <motion.div
