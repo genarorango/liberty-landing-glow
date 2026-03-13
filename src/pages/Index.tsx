@@ -16,14 +16,32 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <Hero />
+      {/* Hero (white) → StatsBar (dark) */}
+      <div className="section-fade-to-dark" />
       <StatsBar />
+      {/* StatsBar (dark) → FeaturedOn (white) */}
+      <div className="section-fade-to-light" />
       <FeaturedOn />
+      {/* FeaturedOn (white) → WhatWeDo (dark) */}
+      <div className="section-fade-to-dark" />
       <WhatWeDo />
+      {/* WhatWeDo (dark) → WhyChoose (white) */}
+      <div className="section-fade-to-light" />
       <WhyChoose />
+      {/* WhyChoose (white) → HowItWorks (dark) */}
+      <div className="section-fade-to-dark" />
       <HowItWorks />
+      {/* HowItWorks (dark) → VideoTestimonials (white) */}
+      <div className="section-fade-to-light" />
       <VideoTestimonials />
+      {/* VideoTestimonials (white) → WrittenTestimonials (dark) */}
+      <div className="section-fade-to-dark" />
       <WrittenTestimonials />
+      {/* WrittenTestimonials (dark) → AboutJesse (white) */}
+      <div className="section-fade-to-light" />
       <AboutJesse />
+      {/* AboutJesse (white) → FinalCTA (dark) */}
+      <div className="section-fade-to-dark" />
       <FinalCTA />
       <Footer />
     </div>
