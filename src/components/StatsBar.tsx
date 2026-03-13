@@ -14,7 +14,7 @@ const StatsBar = () => {
 
   return (
     <section ref={ref} className="section-dark bg-navy-deep border-y border-border py-12 relative overflow-hidden">
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(8 100% 40% / 0.1), transparent 70%)", filter: "blur(80px)" }} />
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(348 88% 43% / 0.12), transparent 70%)", filter: "blur(80px)" }} />
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
