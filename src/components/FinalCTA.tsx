@@ -16,7 +16,7 @@ const FinalCTA = () => {
 
   return (
     <section id="contact" ref={ref} className="section-dark py-20 md:py-28 bg-navy-deep relative overflow-hidden">
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(8 100% 40% / 0.15), transparent 70%)", filter: "blur(120px)" }} />
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(348 88% 43% / 0.18), transparent 70%)", filter: "blur(120px)" }} />
 
       <div className="container mx-auto px-4 md:px-8 text-center relative z-10">
         <motion.div

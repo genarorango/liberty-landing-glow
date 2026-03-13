@@ -23,7 +23,7 @@ const Hero = () => {
   return (
     <section id="home" className="gradient-hero min-h-screen flex items-center pt-20 pb-16 overflow-hidden relative">
       {/* Subtle aura orbs */}
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(8 100% 40% / 0.08), transparent 70%)", filter: "blur(100px)" }} />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(348 88% 43% / 0.12), transparent 70%)", filter: "blur(100px)" }} />
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(216 60% 50% / 0.08), transparent 70%)", filter: "blur(100px)" }} />
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">

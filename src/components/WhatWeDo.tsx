@@ -17,7 +17,7 @@ const WhatWeDo = () => {
 
   return (
     <section id="services" ref={ref} className="section-dark py-20 md:py-28 bg-navy-deep relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(8 100% 40% / 0.08), transparent 70%)", filter: "blur(100px)" }} />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(348 88% 43% / 0.1), transparent 70%)", filter: "blur(100px)" }} />
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
