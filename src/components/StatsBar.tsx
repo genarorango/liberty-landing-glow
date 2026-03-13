@@ -13,8 +13,7 @@ const StatsBar = () => {
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section ref={ref} className="bg-secondary/50 border-y border-border py-12 relative overflow-hidden">
-      {/* Aura glow */}
+    <section ref={ref} className="section-dark bg-navy-deep border-y border-border py-12 relative overflow-hidden">
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(8 100% 40% / 0.1), transparent 70%)", filter: "blur(80px)" }} />
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -27,8 +26,8 @@ const StatsBar = () => {
               transition={{ delay: i * 0.15, duration: 0.5 }}
               className="text-center"
             >
-              <div className="text-2xl md:text-3xl font-bold text-foreground">{s.value}</div>
-              <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
+              <div className="text-2xl md:text-3xl font-bold text-white">{s.value}</div>
+              <div className="text-sm text-white/60 mt-1">{s.label}</div>
             </motion.div>
           ))}
         </div>

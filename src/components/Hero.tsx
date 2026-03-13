@@ -22,9 +22,9 @@ const trustItems = [
 const Hero = () => {
   return (
     <section id="home" className="gradient-hero min-h-screen flex items-center pt-20 pb-16 overflow-hidden relative">
-      {/* Aura orbs */}
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(8 100% 40% / 0.18), transparent 70%)", filter: "blur(100px)" }} />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(8 100% 40% / 0.15), transparent 70%)", filter: "blur(100px)" }} />
+      {/* Subtle aura orbs */}
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(8 100% 40% / 0.08), transparent 70%)", filter: "blur(100px)" }} />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(216 60% 50% / 0.08), transparent 70%)", filter: "blur(100px)" }} />
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
@@ -33,7 +33,7 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-foreground">
               Access{" "}
               <span className="text-gradient-red">$50K–$250K</span>{" "}
               in Zero-Percent Business Funding
@@ -71,10 +71,10 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="w-64 h-80 md:w-72 md:h-96 rounded-2xl gradient-card border border-border flex items-center justify-center relative z-10"
+              className="w-64 h-80 md:w-72 md:h-96 rounded-2xl bg-card border border-border flex items-center justify-center relative z-10 shadow-xl"
             >
               <div className="text-center text-muted-foreground">
-                <div className="w-20 h-20 rounded-full bg-secondary mx-auto mb-4 flex items-center justify-center">
+                <div className="w-20 h-20 rounded-full bg-muted mx-auto mb-4 flex items-center justify-center">
                   <span className="text-2xl">👤</span>
                 </div>
                 <p className="text-sm font-medium">INSERT JESSE PHOTO</p>
@@ -98,7 +98,7 @@ const Hero = () => {
               >
                 <div className="flex items-center gap-2">
                   <Check size={14} className="text-primary" />
-                  <span className="text-foreground font-bold">{b.amount}</span>
+                  <span className="font-bold">{b.amount}</span>
                 </div>
                 <p className="text-[10px] text-muted-foreground">Approved</p>
               </motion.div>

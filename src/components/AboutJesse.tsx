@@ -1,7 +1,6 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Play } from "lucide-react";
-import { useState } from "react";
 
 const tags = ["30+ Years in Business", "Real Estate Expert", "Serial Entrepreneur", "Credit Strategist"];
 
@@ -16,27 +15,26 @@ const AboutJesse = () => {
   const [playingVideo, setPlayingVideo] = useState<number | null>(null);
 
   return (
-    <section id="about" ref={ref} className="py-20 md:py-28 bg-navy-deep">
+    <section id="about" ref={ref} className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold">Jesse's Story & Expertise</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Jesse's Story & Expertise</h2>
           <p className="text-muted-foreground text-lg mt-4">30+ years building businesses and helping entrepreneurs succeed</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          {/* Photo */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             className="flex justify-center"
           >
-            <div className="w-72 h-80 md:w-80 md:h-96 rounded-2xl gradient-card border border-border flex items-center justify-center">
+            <div className="w-72 h-80 md:w-80 md:h-96 rounded-2xl bg-card border border-border flex items-center justify-center shadow-xl">
               <div className="text-center text-muted-foreground">
-                <div className="w-20 h-20 rounded-full bg-secondary mx-auto mb-4 flex items-center justify-center">
+                <div className="w-20 h-20 rounded-full bg-muted mx-auto mb-4 flex items-center justify-center">
                   <span className="text-2xl">👤</span>
                 </div>
                 <p className="text-sm font-medium">INSERT JESSE PHOTO</p>
@@ -44,7 +42,6 @@ const AboutJesse = () => {
             </div>
           </motion.div>
 
-          {/* Bio */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -63,7 +60,6 @@ const AboutJesse = () => {
           </motion.div>
         </div>
 
-        {/* Video cards */}
         <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {aboutVideos.map((v, i) => (
             <motion.div
@@ -71,14 +67,14 @@ const AboutJesse = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 + i * 0.15 }}
-              className="gradient-card rounded-xl overflow-hidden border border-border card-glow"
+              className="bg-card rounded-xl overflow-hidden border border-border shadow-lg"
             >
               <div className="aspect-video relative">
                 {playingVideo === i ? (
                   <iframe src={v.embedUrl} className="w-full h-full" allow="autoplay; encrypted-media" allowFullScreen />
                 ) : (
                   <div
-                    className="w-full h-full bg-secondary flex items-center justify-center cursor-pointer group"
+                    className="w-full h-full bg-muted flex items-center justify-center cursor-pointer group"
                     onClick={() => setPlayingVideo(i)}
                   >
                     <div className="w-14 h-14 rounded-full gradient-red flex items-center justify-center group-hover:scale-110 transition-transform glow-red">
@@ -88,7 +84,7 @@ const AboutJesse = () => {
                 )}
               </div>
               <div className="p-4">
-                <h3 className="font-semibold">{v.title}</h3>
+                <h3 className="font-semibold text-foreground">{v.title}</h3>
               </div>
             </motion.div>
           ))}
