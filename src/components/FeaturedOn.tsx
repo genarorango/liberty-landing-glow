@@ -24,10 +24,10 @@ const FeaturedOn = () => {
               <motion.div
                 key={logo}
                 initial={{ opacity: 0, y: 10 }}
-                animate={inView ? { opacity: 0.5, y: 0 } : {}}
+                animate={inView ? { opacity: 0.4, y: 0 } : {}}
                 transition={{ delay: i * 0.1 }}
-                whileHover={{ opacity: 1 }}
-                className="text-lg md:text-xl font-semibold text-muted-foreground transition-opacity cursor-default whitespace-nowrap"
+                whileHover={{ opacity: 0.8 }}
+                className="text-lg md:text-xl font-semibold text-foreground/40 transition-opacity cursor-default whitespace-nowrap"
               >
                 {logo}
               </motion.div>

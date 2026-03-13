@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const CTA_URL = "https://libertyfunding.us/start779500-1722";
+
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
@@ -25,7 +27,7 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/95 backdrop-blur-md border-b border-border shadow-lg" : "bg-transparent"
+        scrolled ? "bg-white/95 backdrop-blur-md border-b border-border shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20">
@@ -48,7 +50,7 @@ const Navbar = () => {
 
         <div className="hidden md:block">
           <a
-            href="https://libertyfunding.us/start779500-1722"
+            href={CTA_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="gradient-red text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
@@ -68,7 +70,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background/98 backdrop-blur-md border-b border-border"
+            className="md:hidden bg-white/98 backdrop-blur-md border-b border-border"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
               {navLinks.map((l) => (
@@ -82,7 +84,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="https://libertyfunding.us/start779500-1722"
+                href={CTA_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="gradient-red text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold text-center"
