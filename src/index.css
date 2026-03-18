@@ -41,6 +41,7 @@
     --text-gray: 215 20% 45%;
 
     --lime: 82 78% 55%;
+    --warm-white: 40 33% 97%;
   }
 }
 
@@ -85,10 +86,6 @@
 
   .gradient-card-dark {
     background: linear-gradient(145deg, hsl(216 50% 14%), hsl(216 50% 10%));
-  }
-
-  .gradient-hero {
-    background: hsl(0 0% 100%);
   }
 
   .glow-red {

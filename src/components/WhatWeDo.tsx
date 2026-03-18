@@ -16,7 +16,7 @@ const WhatWeDo = () => {
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section id="services" ref={ref} className="section-dark py-20 md:py-28 bg-navy-deep">
+    <section id="services" ref={ref} className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <motion.div
@@ -24,10 +24,10 @@ const WhatWeDo = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-foreground">
               Strategic Business Funding Consulting for Entrepreneurs
             </h2>
-            <p className="text-white/60 text-lg leading-relaxed mb-4">
+            <p className="text-muted-foreground text-lg leading-relaxed mb-4">
               Liberty Funding is a professional business funding consulting firm that helps entrepreneurs position themselves for <span className="text-lime">$50K+</span> in potential funding — without collateral, equity, or long operating history requirements.
             </p>
             <p className="text-primary font-semibold text-lg mb-8 italic">
@@ -50,11 +50,11 @@ const WhatWeDo = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.2 + i * 0.15, duration: 0.5 }}
-                className="gradient-card-dark rounded-xl p-6 border border-white/10 hover:border-primary/30 transition-colors card-glow-dark"
+                className="rounded-xl p-6 border border-border bg-card hover:border-primary/30 transition-colors card-glow"
               >
                 <c.icon size={28} className="text-primary mb-4" />
-                <h3 className="font-semibold mb-2 text-white">{c.title}</h3>
-                <p className="text-sm text-white/60 leading-relaxed">{c.desc}</p>
+                <h3 className="font-semibold mb-2 text-foreground">{c.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
               </motion.div>
             ))}
           </div>

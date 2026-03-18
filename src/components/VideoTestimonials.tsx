@@ -32,17 +32,17 @@ const VideoTestimonials = () => {
   const [playing, setPlaying] = useState<number | null>(null);
 
   return (
-    <section ref={ref} className="section-dark py-20 md:py-28 bg-navy-deep">
+    <section ref={ref} className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Real People. <span className="text-gradient-red">Real Results</span>
           </h2>
-          <p className="text-white/60 text-lg mt-4 max-w-xl mx-auto">
+          <p className="text-muted-foreground text-lg mt-4 max-w-xl mx-auto">
             Hear from real people we've helped get real results for their businesses
           </p>
         </motion.div>
@@ -54,7 +54,7 @@ const VideoTestimonials = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2 + i * 0.15 }}
-              className="gradient-card-dark rounded-xl border border-white/10 overflow-hidden hover:border-primary/30 transition-all shadow-lg cursor-pointer"
+              className="rounded-xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-all shadow-lg cursor-pointer"
               onClick={() => setPlaying(i)}
             >
               <div className="aspect-video relative">
@@ -81,8 +81,8 @@ const VideoTestimonials = () => {
                 )}
               </div>
               <div className="p-5">
-                <h3 className="font-semibold text-white">{v.title}</h3>
-                <p className="text-sm text-white/60 mt-2 leading-relaxed line-clamp-2">{v.desc}</p>
+                <h3 className="font-semibold text-foreground">{v.title}</h3>
+                <p className="text-sm text-muted-foreground mt-2 leading-relaxed line-clamp-2">{v.desc}</p>
               </div>
             </motion.div>
           ))}
