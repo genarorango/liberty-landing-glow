@@ -21,7 +21,7 @@ const trustItems = [
 
 const Hero = () => {
   return (
-    <section id="home" className="bg-background min-h-screen flex items-center pt-20 pb-16 overflow-hidden relative">
+    <section id="home" className="min-h-screen flex items-center pt-20 pb-16 overflow-hidden relative" style={{ backgroundColor: "hsl(var(--warm-white))" }}>
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           <motion.div

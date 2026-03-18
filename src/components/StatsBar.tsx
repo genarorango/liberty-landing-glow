@@ -13,7 +13,7 @@ const StatsBar = () => {
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section ref={ref} className="section-dark bg-navy-deep border-y border-border py-12">
+    <section ref={ref} className="bg-background border-y border-border py-12">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((s, i) => (
@@ -24,8 +24,8 @@ const StatsBar = () => {
               transition={{ delay: i * 0.15, duration: 0.5 }}
               className="text-center"
             >
-              <div className={`text-2xl md:text-3xl font-bold ${s.isMoney ? "text-lime" : "text-white"}`}>{s.value}</div>
-              <div className="text-sm text-white/60 mt-1">{s.label}</div>
+              <div className={`text-2xl md:text-3xl font-bold ${s.isMoney ? "text-lime" : "text-foreground"}`}>{s.value}</div>
+              <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
             </motion.div>
           ))}
         </div>

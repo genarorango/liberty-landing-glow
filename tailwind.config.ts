@@ -56,6 +56,7 @@ export default {
         },
         lime: "hsl(var(--lime))",
         "text-gray": "hsl(var(--text-gray))",
+        "warm-white": "hsl(var(--warm-white))",
       },
       borderRadius: {
         lg: "var(--radius)",

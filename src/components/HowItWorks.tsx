@@ -16,12 +16,12 @@ const HowItWorks = () => {
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section ref={ref} className="section-dark py-20 md:py-28 bg-navy-deep">
+    <section ref={ref} className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-8 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="text-3xl md:text-4xl font-bold mb-16 text-white"
+          className="text-3xl md:text-4xl font-bold mb-16 text-foreground"
         >
           How It Works
         </motion.h2>
@@ -36,8 +36,8 @@ const HowItWorks = () => {
               className="text-center"
             >
               <div className="text-5xl md:text-6xl font-black text-gradient-red mb-4">{s.num}</div>
-              <h3 className="text-lg font-semibold mb-2 text-white">{s.title}</h3>
-              <p className="text-sm text-white/60 leading-relaxed">{s.desc}</p>
+              <h3 className="text-lg font-semibold mb-2 text-foreground">{s.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
             </motion.div>
           ))}
         </div>
