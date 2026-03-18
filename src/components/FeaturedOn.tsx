@@ -8,12 +8,12 @@ const FeaturedOn = () => {
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section ref={ref} className="py-16 bg-background">
+    <section ref={ref} className="section-dark py-16 bg-navy-deep">
       <div className="container mx-auto px-4 md:px-8">
         <motion.p
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          className="text-center text-sm tracking-[0.3em] text-muted-foreground uppercase mb-10"
+          className="text-center text-sm tracking-[0.3em] text-white/50 uppercase mb-10"
         >
           As Featured On
         </motion.p>
@@ -27,7 +27,7 @@ const FeaturedOn = () => {
                 animate={inView ? { opacity: 0.4, y: 0 } : {}}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ opacity: 0.8 }}
-                className="text-lg md:text-xl font-semibold text-foreground/40 transition-opacity cursor-default whitespace-nowrap"
+                className="text-lg md:text-xl font-semibold text-white/40 transition-opacity cursor-default whitespace-nowrap"
               >
                 {logo}
               </motion.div>

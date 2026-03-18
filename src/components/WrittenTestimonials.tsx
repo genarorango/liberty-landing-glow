@@ -7,18 +7,25 @@ const reviews = [
     text: "Jesse and his team are incredible. They walked me through every step and got me approved for $80,000 in business funding. Highly recommend!",
     author: "Verified Client",
     source: "Google Review",
+    money: "$80,000",
   },
   {
     text: "I had no idea this was even possible. Liberty Funding helped me access $141,000 to grow my business. Life changing.",
     author: "Verified Client",
     source: "Google Review",
+    money: "$141,000",
   },
   {
     text: "Professional, fast, and they actually deliver. Got funded in under a week.",
     author: "Verified Client",
     source: "Google Review",
+    money: null,
   },
 ];
+
+const highlightMoney = (text: string) => {
+  return text.replace(/\$[\d,]+/g, (match) => `%%${match}%%`);
+};
 
 const WrittenTestimonials = () => {
   const ref = useRef(null);
@@ -36,27 +43,38 @@ const WrittenTestimonials = () => {
         </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {reviews.map((r, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.15 * i }}
-              className="gradient-card-dark rounded-xl p-6 md:p-8 border border-white/10 card-glow-dark"
-            >
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, j) => (
-                  <Star key={j} size={16} className="text-primary fill-primary" />
-                ))}
-              </div>
-              <Quote size={24} className="text-primary/30 mb-3" />
-              <p className="text-white/70 leading-relaxed mb-6">{r.text}</p>
-              <div className="border-t border-white/10 pt-4">
-                <p className="font-semibold text-sm text-white">{r.author}</p>
-                <p className="text-xs text-white/50">{r.source}</p>
-              </div>
-            </motion.div>
-          ))}
+          {reviews.map((r, i) => {
+            const parts = highlightMoney(r.text).split("%%");
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.15 * i }}
+                className="gradient-card-dark rounded-xl p-6 md:p-8 border border-white/10 card-glow-dark"
+              >
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, j) => (
+                    <Star key={j} size={16} className="text-primary fill-primary" />
+                  ))}
+                </div>
+                <Quote size={24} className="text-primary/30 mb-3" />
+                <p className="text-white/70 leading-relaxed mb-6">
+                  {parts.map((part, pi) =>
+                    part.startsWith("$") ? (
+                      <span key={pi} className="text-lime font-semibold">{part}</span>
+                    ) : (
+                      <span key={pi}>{part}</span>
+                    )
+                  )}
+                </p>
+                <div className="border-t border-white/10 pt-4">
+                  <p className="font-semibold text-sm text-white">{r.author}</p>
+                  <p className="text-xs text-white/50">{r.source}</p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

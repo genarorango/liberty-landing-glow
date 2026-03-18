@@ -15,15 +15,15 @@ const AboutJesse = () => {
   const [playingVideo, setPlayingVideo] = useState<number | null>(null);
 
   return (
-    <section id="about" ref={ref} className="py-20 md:py-28 bg-background">
+    <section id="about" ref={ref} className="section-dark py-20 md:py-28 bg-navy-deep">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Jesse's Story & Expertise</h2>
-          <p className="text-muted-foreground text-lg mt-4">30+ years building businesses and helping entrepreneurs succeed</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">Jesse's Story & Expertise</h2>
+          <p className="text-white/60 text-lg mt-4">30+ years building businesses and helping entrepreneurs succeed</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
@@ -32,9 +32,9 @@ const AboutJesse = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             className="flex justify-center"
           >
-            <div className="w-72 h-80 md:w-80 md:h-96 rounded-2xl bg-card border border-border flex items-center justify-center shadow-xl">
-              <div className="text-center text-muted-foreground">
-                <div className="w-20 h-20 rounded-full bg-muted mx-auto mb-4 flex items-center justify-center">
+            <div className="w-72 h-80 md:w-80 md:h-96 rounded-2xl bg-navy-light border border-white/10 flex items-center justify-center shadow-xl">
+              <div className="text-center text-white/50">
+                <div className="w-20 h-20 rounded-full bg-white/10 mx-auto mb-4 flex items-center justify-center">
                   <span className="text-2xl">👤</span>
                 </div>
                 <p className="text-sm font-medium">INSERT JESSE PHOTO</p>
@@ -47,8 +47,8 @@ const AboutJesse = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2 }}
           >
-            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              Jesse Tacoronte has spent over 30 years as a serial entrepreneur, real estate investor, and business credit strategist. As keynote speaker at the 2007 CFRI Award of Excellence after selling nearly $30 million in real estate in just two years, Jesse brings proven expertise to every client he works with.
+            <p className="text-white/60 text-lg leading-relaxed mb-6">
+              Jesse Tacoronte has spent over 30 years as a serial entrepreneur, real estate investor, and business credit strategist. As keynote speaker at the 2007 CFRI Award of Excellence after selling nearly <span className="text-lime">$30 million</span> in real estate in just two years, Jesse brings proven expertise to every client he works with.
             </p>
             <div className="flex flex-wrap gap-3">
               {tags.map((t) => (
@@ -67,14 +67,14 @@ const AboutJesse = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 + i * 0.15 }}
-              className="bg-card rounded-xl overflow-hidden border border-border shadow-lg"
+              className="gradient-card-dark rounded-xl overflow-hidden border border-white/10 shadow-lg"
             >
               <div className="aspect-video relative">
                 {playingVideo === i ? (
                   <iframe src={v.embedUrl} className="w-full h-full" allow="autoplay; encrypted-media" allowFullScreen />
                 ) : (
                   <div
-                    className="w-full h-full bg-muted flex items-center justify-center cursor-pointer group"
+                    className="w-full h-full bg-navy-light flex items-center justify-center cursor-pointer group"
                     onClick={() => setPlayingVideo(i)}
                   >
                     <div className="w-14 h-14 rounded-full gradient-red flex items-center justify-center group-hover:scale-110 transition-transform glow-red">
@@ -84,7 +84,7 @@ const AboutJesse = () => {
                 )}
               </div>
               <div className="p-4">
-                <h3 className="font-semibold text-foreground">{v.title}</h3>
+                <h3 className="font-semibold text-white">{v.title}</h3>
               </div>
             </motion.div>
           ))}

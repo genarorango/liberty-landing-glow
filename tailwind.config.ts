@@ -54,6 +54,7 @@ export default {
           deep: "hsl(var(--navy-deep))",
           light: "hsl(var(--navy-light))",
         },
+        lime: "hsl(var(--lime))",
         "text-gray": "hsl(var(--text-gray))",
       },
       borderRadius: {

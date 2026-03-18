@@ -16,10 +16,8 @@ const WhatWeDo = () => {
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section id="services" ref={ref} className="section-dark py-20 md:py-28 bg-navy-deep relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(348 88% 43% / 0.1), transparent 70%)", filter: "blur(100px)" }} />
-
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
+    <section id="services" ref={ref} className="section-dark py-20 md:py-28 bg-navy-deep">
+      <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -30,7 +28,7 @@ const WhatWeDo = () => {
               Strategic Business Funding Consulting for Entrepreneurs
             </h2>
             <p className="text-white/60 text-lg leading-relaxed mb-4">
-              Liberty Funding is a professional business funding consulting firm that helps entrepreneurs position themselves for $50K+ in potential funding — without collateral, equity, or long operating history requirements.
+              Liberty Funding is a professional business funding consulting firm that helps entrepreneurs position themselves for <span className="text-lime">$50K+</span> in potential funding — without collateral, equity, or long operating history requirements.
             </p>
             <p className="text-primary font-semibold text-lg mb-8 italic">
               "We build structure before capital is pursued."
