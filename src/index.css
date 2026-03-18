@@ -39,6 +39,8 @@
     --navy-deep: 216 60% 7%;
     --navy-light: 216 40% 16%;
     --text-gray: 215 20% 45%;
+
+    --lime: 82 78% 55%;
   }
 }
 
@@ -86,15 +88,7 @@
   }
 
   .gradient-hero {
-    background: radial-gradient(ellipse at 20% 50%, hsl(348 88% 43% / 0.06) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 20%, hsl(216 60% 90% / 0.3) 0%, transparent 50%),
-                hsl(0 0% 100%);
-  }
-
-  .gradient-hero-dark {
-    background: radial-gradient(ellipse at 20% 50%, hsl(348 88% 43% / 0.08) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 20%, hsl(216 60% 20% / 0.5) 0%, transparent 50%),
-                hsl(216 56% 10%);
+    background: hsl(0 0% 100%);
   }
 
   .glow-red {
@@ -104,6 +98,10 @@
   .text-gradient-red {
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(135deg, hsl(348 88% 46%), hsl(355 85% 52%));
+  }
+
+  .text-lime {
+    color: hsl(var(--lime));
   }
 
   .card-glow {
@@ -121,19 +119,6 @@
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px hsl(216 60% 10% / 0.1);
     color: hsl(216 56% 10%);
-  }
-
-  /* Smooth section transition dividers */
-  .section-fade-to-dark {
-    height: 120px;
-    background: linear-gradient(to bottom, hsl(0 0% 100%), hsl(216 60% 7%));
-    pointer-events: none;
-  }
-
-  .section-fade-to-light {
-    height: 120px;
-    background: linear-gradient(to bottom, hsl(216 60% 7%), hsl(0 0% 100%));
-    pointer-events: none;
   }
 
   @keyframes float-up {

@@ -21,11 +21,7 @@ const trustItems = [
 
 const Hero = () => {
   return (
-    <section id="home" className="gradient-hero min-h-screen flex items-center pt-20 pb-16 overflow-hidden relative">
-      {/* Subtle aura orbs */}
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(348 88% 43% / 0.12), transparent 70%)", filter: "blur(100px)" }} />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(216 60% 50% / 0.08), transparent 70%)", filter: "blur(100px)" }} />
-
+    <section id="home" className="bg-background min-h-screen flex items-center pt-20 pb-16 overflow-hidden relative">
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           <motion.div
@@ -35,7 +31,7 @@ const Hero = () => {
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-foreground">
               Access{" "}
-              <span className="text-gradient-red">$50K–$250K</span>{" "}
+              <span className="text-lime">$50K–$250K</span>{" "}
               in Zero-Percent Business Funding
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
@@ -60,7 +56,11 @@ const Hero = () => {
                   className="flex items-center gap-2 text-sm text-muted-foreground"
                 >
                   <Check size={16} className="text-primary" />
-                  {item}
+                  {item === "0% APR Options" ? (
+                    <span><span className="text-lime">0% APR</span> Options</span>
+                  ) : (
+                    item
+                  )}
                 </motion.div>
               ))}
             </div>
@@ -98,7 +98,7 @@ const Hero = () => {
               >
                 <div className="flex items-center gap-2">
                   <Check size={14} className="text-primary" />
-                  <span className="font-bold">{b.amount}</span>
+                  <span className="font-bold text-lime">{b.amount}</span>
                 </div>
                 <p className="text-[10px] text-muted-foreground">Approved</p>
               </motion.div>

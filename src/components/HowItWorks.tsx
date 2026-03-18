@@ -16,10 +16,8 @@ const HowItWorks = () => {
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section ref={ref} className="section-dark py-20 md:py-28 bg-navy-deep relative overflow-hidden">
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full pointer-events-none z-0" style={{ background: "radial-gradient(circle, hsl(348 88% 40% / 0.12), transparent 70%)", filter: "blur(100px)" }} />
-
-      <div className="container mx-auto px-4 md:px-8 text-center relative z-10">
+    <section ref={ref} className="section-dark py-20 md:py-28 bg-navy-deep">
+      <div className="container mx-auto px-4 md:px-8 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
