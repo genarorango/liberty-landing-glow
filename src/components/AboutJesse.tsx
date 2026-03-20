@@ -6,8 +6,8 @@ import jessePhoto from "@/assets/jesse-photo.jpeg";
 const tags = ["30+ Years in Business", "Real Estate Expert", "Serial Entrepreneur", "Credit Strategist"];
 
 const aboutVideos = [
-  { title: "Meet Jesse Tacoronte", embedUrl: "https://drive.google.com/file/d/1wWYnmoPTppZ_3N1NT0QdUiEm95hDxDJ7/preview" },
-  { title: "Innovative Funding Strategies", embedUrl: "https://www.youtube.com/embed/WhWrRDc5bqk" },
+  { title: "Meet Jesse Tacoronte", embedUrl: "https://drive.google.com/file/d/1wWYnmoPTppZ_3N1NT0QdUiEm95hDxDJ7/preview", thumbnailUrl: null },
+  { title: "Innovative Funding Strategies", embedUrl: "https://www.youtube.com/embed/WhWrRDc5bqk", thumbnailUrl: "https://img.youtube.com/vi/WhWrRDc5bqk/maxresdefault.jpg" },
 ];
 
 const AboutJesse = () => {
@@ -72,7 +72,11 @@ const AboutJesse = () => {
                   <iframe src={v.embedUrl} className="w-full h-full" allow="autoplay; encrypted-media" allowFullScreen />
                 ) : (
                   <div
-                    className="w-full h-full bg-muted flex items-center justify-center cursor-pointer group"
+                    className="w-full h-full bg-cover bg-center flex items-center justify-center cursor-pointer group"
+                    style={{
+                      backgroundImage: v.thumbnailUrl ? `url(${v.thumbnailUrl})` : undefined,
+                      backgroundColor: v.thumbnailUrl ? undefined : 'hsl(var(--muted))',
+                    }}
                     onClick={() => setPlayingVideo(i)}
                   >
                     <div className="w-14 h-14 rounded-full gradient-red flex items-center justify-center group-hover:scale-110 transition-transform glow-red">

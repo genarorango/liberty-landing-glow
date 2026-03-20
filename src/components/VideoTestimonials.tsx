@@ -7,20 +7,17 @@ import thumb3 from "@/assets/testimonial-thumb-3.jpeg";
 
 const videos = [
   {
-    title: "Meet Jesse Tacoronte",
-    desc: "Watch Jesse share his journey from building seven-figure businesses to helping entrepreneurs access the capital they need to succeed.",
+    title: "Client Testimonial 1",
     embedUrl: "https://drive.google.com/file/d/1wWYnmoPTppZ_3N1NT0QdUiEm95hDxDJ7/preview",
     thumbnail: thumb1,
   },
   {
-    title: "Innovative Funding Strategies",
-    desc: "Discover Jesse's secret to real estate success through strategic business credit and zero-percent funding strategies.",
+    title: "Client Testimonial 2",
     embedUrl: "https://www.youtube.com/embed/WhWrRDc5bqk",
     thumbnail: thumb2,
   },
   {
-    title: "Client Success Story",
-    desc: "Real results from a real client.",
+    title: "Client Testimonial 3",
     embedUrl: "https://drive.google.com/file/d/1mftAsJg4LbhxVuiEuKi0_lHnoctHQxMc/preview",
     thumbnail: thumb3,
   },
@@ -82,7 +79,6 @@ const VideoTestimonials = () => {
               </div>
               <div className="p-5">
                 <h3 className="font-semibold text-foreground">{v.title}</h3>
-                <p className="text-sm text-muted-foreground mt-2 leading-relaxed line-clamp-2">{v.desc}</p>
               </div>
             </motion.div>
           ))}
