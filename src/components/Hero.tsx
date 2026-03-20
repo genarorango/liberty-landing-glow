@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
-import jessePhoto from "@/assets/jesse-photo.jpeg";
+import jessePhoto from "@/assets/jesse-photo.png";
 
 const CTA_URL = "https://libertyfunding.us/start779500-1722";
 

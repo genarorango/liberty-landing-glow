@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Play } from "lucide-react";
-import jessePhoto from "@/assets/jesse-photo.jpeg";
+import jessePhoto from "@/assets/jesse-photo.png";
 
 const tags = ["30+ Years in Business", "Real Estate Expert", "Serial Entrepreneur", "Credit Strategist"];
 
