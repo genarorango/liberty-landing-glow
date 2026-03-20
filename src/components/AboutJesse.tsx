@@ -72,7 +72,11 @@ const AboutJesse = () => {
                   <iframe src={v.embedUrl} className="w-full h-full" allow="autoplay; encrypted-media" allowFullScreen />
                 ) : (
                   <div
-                    className="w-full h-full bg-muted flex items-center justify-center cursor-pointer group"
+                    className="w-full h-full bg-cover bg-center flex items-center justify-center cursor-pointer group"
+                    style={{
+                      backgroundImage: v.thumbnailUrl ? `url(${v.thumbnailUrl})` : undefined,
+                      backgroundColor: v.thumbnailUrl ? undefined : 'hsl(var(--muted))',
+                    }}
                     onClick={() => setPlayingVideo(i)}
                   >
                     <div className="w-14 h-14 rounded-full gradient-red flex items-center justify-center group-hover:scale-110 transition-transform glow-red">
