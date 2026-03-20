@@ -6,8 +6,8 @@ import jessePhoto from "@/assets/jesse-photo.jpeg";
 const tags = ["30+ Years in Business", "Real Estate Expert", "Serial Entrepreneur", "Credit Strategist"];
 
 const aboutVideos = [
-  { title: "Meet Jesse Tacoronte", embedUrl: "https://drive.google.com/file/d/1wWYnmoPTppZ_3N1NT0QdUiEm95hDxDJ7/preview" },
-  { title: "Innovative Funding Strategies", embedUrl: "https://www.youtube.com/embed/WhWrRDc5bqk" },
+  { title: "Meet Jesse Tacoronte", embedUrl: "https://drive.google.com/file/d/1wWYnmoPTppZ_3N1NT0QdUiEm95hDxDJ7/preview", thumbnailUrl: null },
+  { title: "Innovative Funding Strategies", embedUrl: "https://www.youtube.com/embed/WhWrRDc5bqk", thumbnailUrl: "https://img.youtube.com/vi/WhWrRDc5bqk/maxresdefault.jpg" },
 ];
 
 const AboutJesse = () => {

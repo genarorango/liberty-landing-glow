@@ -79,7 +79,6 @@ const VideoTestimonials = () => {
               </div>
               <div className="p-5">
                 <h3 className="font-semibold text-foreground">{v.title}</h3>
-                <p className="text-sm text-muted-foreground mt-2 leading-relaxed line-clamp-2">{v.desc}</p>
               </div>
             </motion.div>
           ))}
