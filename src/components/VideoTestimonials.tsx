@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Play } from "lucide-react";
+import { Play, X } from "lucide-react";
 import thumb1 from "@/assets/testimonial-thumb-1.jpeg";
 import thumb2 from "@/assets/testimonial-thumb-2.jpeg";
 import thumb3 from "@/assets/testimonial-thumb-3.jpeg";
@@ -10,16 +10,19 @@ const videos = [
     title: "Client Testimonial 1",
     embedUrl: "https://drive.google.com/file/d/1wWYnmoPTppZ_3N1NT0QdUiEm95hDxDJ7/preview",
     thumbnail: thumb1,
+    useModal: false,
   },
   {
     title: "Client Testimonial 2",
-    embedUrl: "https://www.youtube.com/embed/WhWrRDc5bqk",
+    embedUrl: "https://drive.google.com/file/d/1cbAHhjm1W7a6eZh0dE408lfarYbeiaul/preview",
     thumbnail: thumb2,
+    useModal: true,
   },
   {
     title: "Client Testimonial 3",
     embedUrl: "https://drive.google.com/file/d/1mftAsJg4LbhxVuiEuKi0_lHnoctHQxMc/preview",
     thumbnail: thumb3,
+    useModal: false,
   },
 ];
 
@@ -27,6 +30,16 @@ const VideoTestimonials = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
   const [playing, setPlaying] = useState<number | null>(null);
+  const [modalVideo, setModalVideo] = useState<string | null>(null);
+
+  const handlePlay = (i: number) => {
+    const v = videos[i];
+    if (v.useModal) {
+      setModalVideo(v.embedUrl);
+    } else {
+      setPlaying(i);
+    }
+  };
 
   return (
     <section ref={ref} className="py-20 md:py-28 bg-background">
@@ -52,10 +65,10 @@ const VideoTestimonials = () => {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2 + i * 0.15 }}
               className="rounded-xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-all shadow-lg cursor-pointer"
-              onClick={() => setPlaying(i)}
+              onClick={() => handlePlay(i)}
             >
               <div className="aspect-video relative">
-                {playing === i ? (
+                {playing === i && !v.useModal ? (
                   <iframe
                     src={v.embedUrl}
                     className="w-full h-full"
@@ -84,6 +97,32 @@ const VideoTestimonials = () => {
           ))}
         </div>
       </div>
+
+      {/* Video Modal */}
+      {modalVideo && (
+        <div
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+          onClick={() => setModalVideo(null)}
+        >
+          <div
+            className="relative w-full max-w-4xl aspect-video"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setModalVideo(null)}
+              className="absolute -top-10 right-0 text-white hover:text-primary transition-colors"
+            >
+              <X size={28} />
+            </button>
+            <iframe
+              src={modalVideo}
+              className="w-full h-full rounded-xl"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };

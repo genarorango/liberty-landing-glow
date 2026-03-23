@@ -87,6 +87,7 @@ const AboutJesse = () => {
               </div>
               <div className="p-4">
                 <h3 className="font-semibold text-foreground">{v.title}</h3>
+                {v.description && <p className="text-sm text-muted-foreground mt-1">{v.description}</p>}
               </div>
             </motion.div>
           ))}
