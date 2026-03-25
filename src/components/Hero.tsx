@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
-import jessePhoto from "@/assets/jesse-photo.png";
+
 
 const CTA_URL = "https://libertyfunding.us/start779500-1722";
 
@@ -22,7 +22,7 @@ const trustItems = [
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center pt-20 pb-16 overflow-hidden relative" style={{ backgroundColor: "hsl(var(--warm-white))" }}>
+    <section id="home" className="min-h-screen flex items-center pt-20 pb-16 overflow-hidden relative" style={{ backgroundColor: "#eeecea" }}>
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           <motion.div
@@ -72,13 +72,11 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden relative z-10 shadow-xl"
+              className="w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden relative z-10 shadow-xl border-2 border-dashed border-muted-foreground/40 bg-muted/50 flex items-center justify-center p-6"
             >
-              <img
-                src={jessePhoto}
-                alt="Jesse Tacoronte"
-                className="w-full h-full object-cover"
-              />
+              <p className="text-center text-muted-foreground font-semibold text-sm leading-relaxed">
+                INSERT PRESS / REAL ESTATE ARTICLE PHOTO
+              </p>
             </motion.div>
 
             {badges.map((b, i) => (
