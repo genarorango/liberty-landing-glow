@@ -31,12 +31,12 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-foreground">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
               Access{" "}
               <span className="text-lime">$50K–$250K</span>{" "}
               in Zero-Percent Business Funding
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
+            <p className="text-lg md:text-xl mb-8 max-w-lg leading-relaxed" style={{ color: "#9ca3af" }}>
               We handle everything from application to approval. You focus on growing your business while we secure the capital you need — no interest, no equity required.
             </p>
             <a
@@ -55,9 +55,9 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + i * 0.15 }}
-                  className="flex items-center gap-2 text-sm text-muted-foreground"
+                  className="flex items-center gap-2 text-sm text-gray-300"
                 >
-                  <Check size={16} className="text-primary" />
+                  <Check size={16} className="text-lime" />
                   {item === "0% APR Options" ? (
                     <span><span className="text-lime">0% APR</span> Options</span>
                   ) : (
@@ -97,10 +97,10 @@ const Hero = () => {
                 }}
               >
                 <div className="flex items-center gap-2">
-                  <Check size={14} className="text-primary" />
+                  <Check size={14} className="text-lime" />
                   <span className="font-bold text-lime">{b.amount}</span>
                 </div>
-                <p className="text-[10px] text-muted-foreground">Approved</p>
+                <p className="text-[10px] text-white/70">Approved</p>
               </motion.div>
             ))}
           </div>
