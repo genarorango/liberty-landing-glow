@@ -23,7 +23,9 @@ const trustItems = [
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center pt-20 pb-16 overflow-hidden relative" style={{ backgroundColor: "#eeecea" }}>
+    <section id="home" className="min-h-screen flex items-center pt-20 pb-16 overflow-hidden relative" style={{ background: "linear-gradient(to right, #0a1628 40%, #0a1628 60%, #1a0a12 100%)" }}>
+      {/* Radial glow behind Jesse */}
+      <div className="absolute top-1/2 right-[15%] -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-40 pointer-events-none" style={{ background: "radial-gradient(circle, #3a0a0a 0%, transparent 70%)" }} />
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           <motion.div
