@@ -6,12 +6,10 @@ import jesseHero from "@/assets/jesse-hero.png";
 const CTA_URL = "https://libertyfunding.us/start779500-1722";
 
 const badges = [
-  { amount: "$65,000", top: "8%", left: "55%", delay: 0.5 },
-  { amount: "$80,000", top: "20%", right: "0%", delay: 0.8 },
-  { amount: "$141,000", top: "45%", right: "-5%", delay: 1.1 },
-  { amount: "$50,000", bottom: "30%", right: "5%", delay: 1.4 },
-  { amount: "$25,000", bottom: "12%", left: "50%", delay: 1.7 },
-  { amount: "$75,000", top: "35%", left: "45%", delay: 2.0 },
+  { amount: "$65,000", top: "12%", right: "2%", delay: 0.5 },
+  { amount: "$80,000", top: "30%", right: "-4%", delay: 0.8 },
+  { amount: "$141,000", bottom: "38%", right: "-2%", delay: 1.1 },
+  { amount: "$50,000", bottom: "18%", right: "8%", delay: 1.4 },
 ];
 
 const trustItems = [
@@ -102,9 +100,8 @@ const Hero = () => {
                 transition={{ delay: b.delay, duration: 0.5, type: "spring" }}
                 className={`floating-badge ${i % 2 === 0 ? "animate-float" : "animate-float-slow"}`}
                 style={{
-                  top: b.top,
+                  top: (b as any).top,
                   bottom: (b as any).bottom,
-                  left: b.left,
                   right: (b as any).right,
                 }}
               >
