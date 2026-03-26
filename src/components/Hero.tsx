@@ -68,14 +68,18 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          <div className="relative flex justify-center items-center min-h-[400px] lg:min-h-[500px]">
+          <div className="relative flex justify-center items-end min-h-[400px] lg:min-h-[500px]">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden relative z-10 shadow-xl"
+              className="relative z-10"
             >
-              <img src={jesseHero} alt="Jesse Tacoronte" className="w-full h-full object-cover" />
+              <img
+                src={jesseHero}
+                alt="Jesse Tacoronte"
+                className="w-[280px] md:w-[340px] lg:w-[400px] h-auto object-contain drop-shadow-2xl"
+              />
             </motion.div>
 
             {badges.map((b, i) => (
