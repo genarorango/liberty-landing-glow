@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
+import jesseHero from "@/assets/jesse-hero.png";
 
 
 const CTA_URL = "https://libertyfunding.us/start779500-1722";
@@ -72,11 +73,9 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden relative z-10 shadow-xl border-2 border-dashed border-muted-foreground/40 bg-muted/50 flex items-center justify-center p-6"
+              className="w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden relative z-10 shadow-xl"
             >
-              <p className="text-center text-muted-foreground font-semibold text-sm leading-relaxed">
-                INSERT PRESS / REAL ESTATE ARTICLE PHOTO
-              </p>
+              <img src={jesseHero} alt="Jesse Tacoronte" className="w-full h-full object-cover" />
             </motion.div>
 
             {badges.map((b, i) => (
