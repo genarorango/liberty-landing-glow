@@ -100,9 +100,8 @@ const Hero = () => {
                 transition={{ delay: b.delay, duration: 0.5, type: "spring" }}
                 className={`floating-badge ${i % 2 === 0 ? "animate-float" : "animate-float-slow"}`}
                 style={{
-                  top: b.top,
+                  top: (b as any).top,
                   bottom: (b as any).bottom,
-                  left: b.left,
                   right: (b as any).right,
                 }}
               >
