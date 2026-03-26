@@ -23,15 +23,17 @@ const trustItems = [
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center pt-20 pb-16 overflow-hidden relative" style={{ background: "linear-gradient(to right, #0a1628 40%, #0a1628 60%, #1a0a12 100%)" }}>
+    <section id="home" className="min-h-screen flex items-center overflow-hidden relative" style={{ background: "linear-gradient(to right, #0a1628 40%, #0a1628 60%, #1a0a12 100%)" }}>
       {/* Radial glow behind Jesse */}
-      <div className="absolute top-1/2 right-[15%] -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-40 pointer-events-none" style={{ background: "radial-gradient(circle, #3a0a0a 0%, transparent 70%)" }} />
+      <div className="absolute top-1/2 right-[10%] -translate-y-1/2 w-[700px] h-[700px] rounded-full opacity-40 pointer-events-none" style={{ background: "radial-gradient(circle, #3a0a0a 0%, transparent 70%)" }} />
+
       <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-0 items-center min-h-screen pt-20">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className="py-16"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
               Access{" "}
@@ -70,7 +72,8 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          <div className="relative flex justify-center items-end min-h-[400px] lg:min-h-[500px]">
+          {/* Jesse photo — full height, blending into background */}
+          <div className="relative self-end flex justify-center lg:justify-end items-end">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -80,10 +83,17 @@ const Hero = () => {
               <img
                 src={jesseHero}
                 alt="Jesse Tacoronte"
-                className="w-[280px] md:w-[340px] lg:w-[400px] h-auto object-contain drop-shadow-2xl"
+                className="w-[300px] md:w-[380px] lg:w-[440px] xl:w-[500px] h-auto object-contain"
+                style={{
+                  maskImage: "linear-gradient(to left, black 60%, transparent 100%), linear-gradient(to top, transparent 0%, black 20%)",
+                  WebkitMaskImage: "linear-gradient(to left, black 60%, transparent 100%), linear-gradient(to top, transparent 0%, black 20%)",
+                  maskComposite: "intersect",
+                  WebkitMaskComposite: "source-in",
+                }}
               />
             </motion.div>
 
+            {/* Floating badges */}
             {badges.map((b, i) => (
               <motion.div
                 key={i}
