@@ -111,10 +111,10 @@
 
   .floating-badge {
     @apply absolute rounded-xl px-3 py-2 text-sm font-semibold;
-    background: hsl(0 0% 100% / 0.95);
-    border: 1px solid hsl(216 20% 88%);
+    background: rgba(22, 32, 50, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px hsl(216 60% 10% / 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     color: hsl(216 56% 10%);
   }
 
