@@ -4,6 +4,8 @@ import { Play, X, ChevronLeft, ChevronRight } from "lucide-react";
 import thumb1 from "@/assets/testimonial-thumb-1.jpeg";
 import thumb2 from "@/assets/testimonial-thumb-2.jpeg";
 import thumb3 from "@/assets/testimonial-thumb-3.jpeg";
+import thumb4 from "@/assets/testimonial-thumb-4.png";
+import thumb5 from "@/assets/testimonial-thumb-5.png";
 
 const videos = [
   {
@@ -26,6 +28,20 @@ const videos = [
     embedUrl: "https://drive.google.com/file/d/1mftAsJg4LbhxVuiEuKi0_lHnoctHQxMc/preview",
     thumbnail: thumb3,
     useModal: false,
+  },
+  {
+    title: "Client Testimonial 4",
+    description: "See how our funding process helped this business owner take the next step.",
+    embedUrl: "https://drive.google.com/file/d/11qpTECfZcja0kMwR_NkS62bpZ9L87_iH/preview",
+    thumbnail: thumb4,
+    useModal: true,
+  },
+  {
+    title: "Client Testimonial 5",
+    description: "Another success story — real funding for real entrepreneurs.",
+    embedUrl: "https://drive.google.com/file/d/1aNSIIWXbnYXJNXSlmNaoxWHBySRRD71w/preview",
+    thumbnail: thumb5,
+    useModal: true,
   },
 ];
 
