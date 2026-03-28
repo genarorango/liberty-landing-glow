@@ -47,10 +47,10 @@ const videos = [
 
 const VideoTestimonials = () => {
   const ref = useRef(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
   const [playing, setPlaying] = useState<number | null>(null);
   const [modalVideo, setModalVideo] = useState<string | null>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePlay = (i: number) => {
     const v = videos[i];
@@ -61,8 +61,11 @@ const VideoTestimonials = () => {
     }
   };
 
-  const scrollLeft = () => setCurrentIndex((prev) => Math.max(0, prev - 1));
-  const scrollRight = () => setCurrentIndex((prev) => Math.min(videos.length - 1, prev + 1));
+  const scroll = (direction: "left" | "right") => {
+    if (!scrollRef.current) return;
+    const amount = 400;
+    scrollRef.current.scrollBy({ left: direction === "left" ? -amount : amount, behavior: "smooth" });
+  };
 
   return (
     <section ref={ref} className="py-20 md:py-28" style={{ backgroundColor: "#0d1b2e" }}>
@@ -80,63 +83,28 @@ const VideoTestimonials = () => {
           </p>
         </motion.div>
 
-        {/* Desktop grid */}
-        <div className="hidden md:grid grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {videos.map((v, i) => (
-            <VideoCard key={i} video={v} index={i} inView={inView} playing={playing === i} onPlay={() => handlePlay(i)} />
-          ))}
-        </div>
-
-        {/* Mobile carousel with arrows */}
-        <div className="md:hidden relative">
-          <div className="overflow-hidden">
-            <div
-              className="flex transition-transform duration-300"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-              {videos.map((v, i) => (
-                <div key={i} className="w-full flex-shrink-0 px-2">
-                  <VideoCard video={v} index={i} inView={inView} playing={playing === i} onPlay={() => handlePlay(i)} />
-                </div>
-              ))}
-            </div>
-          </div>
-          <button
-            onClick={scrollLeft}
-            disabled={currentIndex === 0}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white disabled:opacity-30 hover:bg-white/20 transition-colors z-10"
+        <div className="relative">
+          <div
+            ref={scrollRef}
+            className="flex gap-6 overflow-x-auto scroll-smooth pb-4"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
-            <ChevronLeft size={20} />
-          </button>
-          <button
-            onClick={scrollRight}
-            disabled={currentIndex === videos.length - 1}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white disabled:opacity-30 hover:bg-white/20 transition-colors z-10"
-          >
-            <ChevronRight size={20} />
-          </button>
-          <div className="flex justify-center gap-2 mt-4">
-            {videos.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrentIndex(i)}
-                className={`w-2 h-2 rounded-full transition-colors ${i === currentIndex ? "bg-white" : "bg-white/30"}`}
-              />
+            {videos.map((v, i) => (
+              <div key={i} className="flex-shrink-0 w-[320px] md:w-[380px]">
+                <VideoCard video={v} index={i} inView={inView} playing={playing === i} onPlay={() => handlePlay(i)} />
+              </div>
             ))}
           </div>
-        </div>
 
-        {/* Desktop arrows */}
-        <div className="hidden md:flex justify-center gap-4 mt-8">
           <button
-            onClick={scrollLeft}
-            className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+            onClick={() => scroll("left")}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10"
           >
             <ChevronLeft size={20} />
           </button>
           <button
-            onClick={scrollRight}
-            className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+            onClick={() => scroll("right")}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10"
           >
             <ChevronRight size={20} />
           </button>
