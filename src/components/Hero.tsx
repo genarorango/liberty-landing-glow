@@ -76,7 +76,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative z-10"
+              className="relative z-[1]"
             >
               <img
                 src={jesseHero}
@@ -98,7 +98,7 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: b.delay, duration: 0.5, type: "spring" }}
-                className={`floating-badge ${i % 2 === 0 ? "animate-float" : "animate-float-slow"}`}
+                className={`floating-badge z-10 ${i % 2 === 0 ? "animate-float" : "animate-float-slow"}`}
                 style={{
                   top: (b as any).top,
                   bottom: (b as any).bottom,
