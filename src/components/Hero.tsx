@@ -3,7 +3,7 @@ import { Check, ArrowRight } from "lucide-react";
 import jesseHero from "@/assets/jesse-hero.png";
 
 
-const CTA_URL = "https://libertyfunding.us/start779500-1722";
+const CTA_URL = "https://libertyfunding.us/capital";
 
 const badges = [
   { amount: "$65,000", top: "12%", right: "2%", delay: 0.5 },

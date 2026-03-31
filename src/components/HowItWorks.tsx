@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 
-const CTA_URL = "https://libertyfunding.us/start779500-1722";
+const CTA_URL = "https://libertyfunding.us/capital";
 
 const steps = [
   { num: "01", title: "Submit Application", desc: "Complete our simple application form with your basic business information." },

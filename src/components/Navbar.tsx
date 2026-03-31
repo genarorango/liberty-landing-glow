@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const CTA_URL = "https://libertyfunding.us/start779500-1722";
+const CTA_URL = "https://libertyfunding.us/capital";
 
 const navLinks = [
   { label: "Home", href: "#home" },
