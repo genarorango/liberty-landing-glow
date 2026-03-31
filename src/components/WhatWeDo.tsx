@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Search, Map, Settings, Shield, ArrowRight } from "lucide-react";
 
-const CTA_URL = "https://libertyfunding.us/start779500-1722";
+const CTA_URL = "https://libertyfunding.us/capital";
 
 const cards = [
   { icon: Search, title: "Credit Profile Analysis", desc: "We analyze credit structure, utilization, profile strength, and risk indicators." },
