@@ -1,4 +1,8 @@
 {
+  "redirects": [
+    { "source": "/capital", "destination": "https://www.libertyfunding.us/capital", "permanent": false },
+    { "source": "/survey-split", "destination": "https://www.libertyfunding.us/survey-split", "permanent": false }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]
