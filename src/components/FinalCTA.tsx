@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, MessageSquare, DollarSign, Users } from "lucide-react";
 
-const CTA_URL = "https://www.libertyfunding.us/capital";
+const CTA_URL = "/capital";
 
 const cards = [
   { icon: MessageSquare, title: "Free Consultation", desc: "No cost to get started" },

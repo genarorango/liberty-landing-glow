@@ -1,5 +1,5 @@
 const Footer = () => {
-  const CTA_URL = "https://www.libertyfunding.us/capital";
+  const CTA_URL = "/capital";
   
   const links = [
     { label: "Home", href: CTA_URL },
