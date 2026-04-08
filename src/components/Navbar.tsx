@@ -5,11 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 const CTA_URL = "https://libertyfunding.us/capital";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: CTA_URL },
+  { label: "Services", href: CTA_URL },
+  { label: "About", href: CTA_URL },
+  { label: "Contact", href: CTA_URL },
 ];
+
+
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -42,6 +44,8 @@ const Navbar = () => {
             <a
               key={l.label}
               href={l.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
             >
               {l.label}
@@ -79,6 +83,8 @@ const Navbar = () => {
                 <a
                   key={l.label}
                   href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setMobileOpen(false)}
                   className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
                 >
