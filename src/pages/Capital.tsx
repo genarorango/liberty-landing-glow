@@ -59,7 +59,7 @@ export default function Capital() {
 
         {/* CTA Button */}
         <a
-          href="https://libertyfunding.us/survey-split"
+          href="https://www.libertyfunding.us/survey-split"
           style={{
             display: "inline-block",
             background: "linear-gradient(180deg, #f97316, #ea580c)",
