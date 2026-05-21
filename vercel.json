@@ -1,9 +1,11 @@
 {
   "redirects": [
-    { "source": "/survey-split", "destination": "https://old.libertyfunding.us/survey-split", "permanent": false },
-    { "source": "/capital", "destination": "https://old.libertyfunding.us/capital", "permanent": false }
+    { "source": "/survey-split", "destination": "https://go.libertyfunding.us/survey-split", "permanent": false },
+    { "source": "/capital", "destination": "https://go.libertyfunding.us/capital", "permanent": false },
+    { "source": "/booking-split", "destination": "https://go.libertyfunding.us/booking-split", "permanent": false }
   ],
   "rewrites": [
+    { "source": "/videos/:path*", "destination": "/videos/:path*" },
     { "source": "/(.*)", "destination": "/" }
   ]
 }
