@@ -6,6 +6,7 @@ import thumb2 from "@/assets/testimonial-thumb-2.jpeg";
 import thumb3 from "@/assets/testimonial-thumb-3.jpeg";
 import thumb4 from "@/assets/testimonial-thumb-4.png";
 import thumb5 from "@/assets/testimonial-thumb-5.png";
+import thumb7 from "@/assets/testimonial-thumb-7.jpeg";
 
 const videos = [
   {
@@ -14,6 +15,7 @@ const videos = [
     embedUrl: "https://drive.google.com/file/d/1wWYnmoPTppZ_3N1NT0QdUiEm95hDxDJ7/preview",
     thumbnail: thumb1,
     useModal: false,
+    videoSrc: undefined as string | undefined,
   },
   {
     title: "Client Testimonial 2",
@@ -21,6 +23,7 @@ const videos = [
     embedUrl: "https://drive.google.com/file/d/1cbAHhjm1W7a6eZh0dE408lfarYbeiaul/preview",
     thumbnail: thumb2,
     useModal: true,
+    videoSrc: undefined as string | undefined,
   },
   {
     title: "Client Testimonial 3",
@@ -28,6 +31,7 @@ const videos = [
     embedUrl: "https://drive.google.com/file/d/1mftAsJg4LbhxVuiEuKi0_lHnoctHQxMc/preview",
     thumbnail: thumb3,
     useModal: false,
+    videoSrc: undefined as string | undefined,
   },
   {
     title: "Client Testimonial 4",
@@ -35,6 +39,7 @@ const videos = [
     embedUrl: "https://drive.google.com/file/d/11qpTECfZcja0kMwR_NkS62bpZ9L87_iH/preview",
     thumbnail: thumb4,
     useModal: true,
+    videoSrc: undefined as string | undefined,
   },
   {
     title: "Client Testimonial 5",
@@ -42,6 +47,15 @@ const videos = [
     embedUrl: "https://drive.google.com/file/d/1aNSIIWXbnYXJNXSlmNaoxWHBySRRD71w/preview",
     thumbnail: thumb5,
     useModal: true,
+    videoSrc: undefined as string | undefined,
+  },
+  {
+    title: "Client Testimonial 7",
+    description: "Real results from real business owners — see how we helped them secure the funding they needed.",
+    embedUrl: "",
+    thumbnail: thumb7,
+    useModal: true,
+    videoSrc: "/videos/testimonial-7.mp4",
   },
 ];
 
@@ -55,7 +69,7 @@ const VideoTestimonials = () => {
   const handlePlay = (i: number) => {
     const v = videos[i];
     if (v.useModal) {
-      setModalVideo(v.embedUrl);
+      setModalVideo(v.videoSrc ?? v.embedUrl);
     } else {
       setPlaying(i);
     }
@@ -127,12 +141,21 @@ const VideoTestimonials = () => {
             >
               <X size={28} />
             </button>
-            <iframe
-              src={modalVideo}
-              className="w-full h-full rounded-xl"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            />
+            {modalVideo?.endsWith(".mp4") ? (
+              <video
+                src={modalVideo}
+                className="w-full h-full rounded-xl"
+                controls
+                autoPlay
+              />
+            ) : (
+              <iframe
+                src={modalVideo}
+                className="w-full h-full rounded-xl"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              />
+            )}
           </div>
         </div>
       )}
