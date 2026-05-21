@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
-import jesseHero from "@/assets/jesse-hero.png";
 
 
-const CTA_URL = "https://old.libertyfunding.us/capital";
+const CTA_URL = "https://go.libertyfunding.us/capital";
 
 const badges = [
   { amount: "$65,000", top: "12%", right: "2%", delay: 0.5 },
@@ -41,14 +40,23 @@ const Hero = () => {
             <p className="text-lg md:text-xl mb-8 max-w-lg leading-relaxed" style={{ color: "#9ca3af" }}>
               We handle everything from application to approval. You focus on growing your business while we secure the capital you need — no interest, no equity required.
             </p>
-            <a
-              href={CTA_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 gradient-red text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:opacity-90 transition-all glow-red"
-            >
-              Apply For Funding <ArrowRight size={20} />
-            </a>
+            <div className="flex flex-wrap gap-4">
+              <a
+                href={CTA_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 gradient-red text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:opacity-90 transition-all glow-red"
+              >
+                Apply For Funding <ArrowRight size={20} />
+              </a>
+              <a
+                href="/accelerator"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg text-lg font-semibold border transition-all hover:bg-white/10"
+                style={{ borderColor: "rgba(164,230,51,0.5)", color: "#A4E633" }}
+              >
+                Funding Accelerator <ArrowRight size={20} />
+              </a>
+            </div>
 
             <div className="flex flex-wrap gap-4 mt-8">
               {trustItems.map((item, i) => (
@@ -71,23 +79,19 @@ const Hero = () => {
           </motion.div>
 
           {/* Jesse photo — full height, blending into background */}
-          <div className="relative self-end flex justify-center lg:justify-end items-end">
+          <div className="relative self-end flex justify-center lg:justify-center items-end">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               className="relative z-[1]"
             >
-              <img
-                src={jesseHero}
-                alt="Jesse Tacoronte"
-                className="w-[300px] md:w-[380px] lg:w-[440px] xl:w-[500px] h-auto object-contain"
-                style={{
-                  maskImage: "linear-gradient(to left, black 60%, transparent 100%), linear-gradient(to top, transparent 0%, black 20%)",
-                  WebkitMaskImage: "linear-gradient(to left, black 60%, transparent 100%), linear-gradient(to top, transparent 0%, black 20%)",
-                  maskComposite: "intersect",
-                  WebkitMaskComposite: "source-in",
-                }}
+              <video
+                src="/videos/jesse-reel.mp4"
+                poster="/videos/jesse-poster.jpg"
+                controls
+                playsInline
+                className="w-[280px] md:w-[320px] lg:w-[360px] xl:w-[400px] h-auto rounded-3xl shadow-2xl shadow-black/40"
               />
             </motion.div>
 

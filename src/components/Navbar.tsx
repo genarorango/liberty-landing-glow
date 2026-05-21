@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const CTA_URL = "https://old.libertyfunding.us/capital";
+const CTA_URL = "https://go.libertyfunding.us/capital";
 
 const navLinks = [
-  { label: "Home", href: CTA_URL },
-  { label: "Services", href: CTA_URL },
-  { label: "About", href: CTA_URL },
-  { label: "Contact", href: CTA_URL },
+  { label: "Home", anchor: "home" },
+  { label: "Services", anchor: "programs" },
+  { label: "About", anchor: "about" },
+  { label: "Contact", anchor: "contact" },
+  { label: "Funding Accelerator", href: "/accelerator" },
 ];
 
 
@@ -16,6 +18,13 @@ const navLinks = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
+  const getHref = (link: typeof navLinks[0]) => {
+    if (link.href) return link.href;
+    return isHome ? `#${link.anchor}` : `/#${link.anchor}`;
+  };
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
@@ -43,10 +52,8 @@ const Navbar = () => {
           {navLinks.map((l) => (
             <a
               key={l.label}
-              href={l.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              href={getHref(l)}
+              className="text-sm font-medium transition-colors text-gray-300 hover:text-white"
             >
               {l.label}
             </a>
@@ -82,11 +89,9 @@ const Navbar = () => {
               {navLinks.map((l) => (
                 <a
                   key={l.label}
-                  href={l.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={getHref(l)}
                   onClick={() => setMobileOpen(false)}
-                  className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                  className="text-sm font-medium transition-colors text-gray-300 hover:text-white"
                 >
                   {l.label}
                 </a>

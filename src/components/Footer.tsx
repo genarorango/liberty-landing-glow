@@ -1,16 +1,16 @@
 const Footer = () => {
-  const CTA_URL = "https://old.libertyfunding.us/capital";
+  const CTA_URL = "https://go.libertyfunding.us/capital";
   
   const links = [
-    { label: "Home", href: CTA_URL },
-    { label: "Services", href: CTA_URL },
-    { label: "About", href: CTA_URL },
-    { label: "Contact", href: CTA_URL },
+    { label: "Home", href: "#home" },
+    { label: "Services", href: "#programs" },
+    { label: "About", href: "#about" },
+    { label: "Contact", href: "#contact" },
     { label: "Privacy Policy", href: "#" },
   ];
 
   return (
-    <footer className="section-dark bg-navy-deep border-t border-white/10 py-12">
+    <footer id="contact" className="section-dark bg-navy-deep border-t border-white/10 py-12">
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
@@ -20,11 +20,9 @@ const Footer = () => {
 
           <div className="flex flex-wrap items-center gap-6">
             {links.map((l) => (
-              <a 
-                key={l.label} 
+              <a
+                key={l.label}
                 href={l.href}
-                target={l.href !== "#" ? "_blank" : undefined}
-                rel={l.href !== "#" ? "noopener noreferrer" : undefined}
                 className="text-sm text-white/50 hover:text-white transition-colors cursor-pointer"
               >
                 {l.label}

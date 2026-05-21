@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
 import FeaturedOn from "@/components/FeaturedOn";
 import WhatWeDo from "@/components/WhatWeDo";
+import OurPrograms from "@/components/OurPrograms";
 import WhyChoose from "@/components/WhyChoose";
 import HowItWorks from "@/components/HowItWorks";
 import VideoTestimonials from "@/components/VideoTestimonials";
@@ -20,6 +21,7 @@ const Index = () => {
       <StatsBar />
       <FeaturedOn />
       <WhatWeDo />
+      <OurPrograms />
       <WhyChoose />
       <HowItWorks />
       <VideoTestimonials />
