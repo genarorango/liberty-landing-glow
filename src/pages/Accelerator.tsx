@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
-import thumb1 from "@/assets/testimonial-thumb-1.jpeg";
-import thumb2 from "@/assets/testimonial-thumb-2.jpeg";
-import thumb3 from "@/assets/testimonial-thumb-3.jpeg";
+import thumb1 from "@/assets/testimonial-thumb-1.png";
+import thumb2 from "@/assets/testimonial-thumb-2.png";
+import thumb3 from "@/assets/testimonial-thumb-3.png";
 import thumb4 from "@/assets/testimonial-thumb-4.png";
 import thumb5 from "@/assets/testimonial-thumb-5.png";
 

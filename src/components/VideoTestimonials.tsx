@@ -1,12 +1,13 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Play, X, ChevronLeft, ChevronRight } from "lucide-react";
-import thumb1 from "@/assets/testimonial-thumb-1.jpeg";
-import thumb2 from "@/assets/testimonial-thumb-2.jpeg";
-import thumb3 from "@/assets/testimonial-thumb-3.jpeg";
+import thumb1 from "@/assets/testimonial-thumb-1.png";
+import thumb2 from "@/assets/testimonial-thumb-2.png";
+import thumb3 from "@/assets/testimonial-thumb-3.png";
 import thumb4 from "@/assets/testimonial-thumb-4.png";
 import thumb5 from "@/assets/testimonial-thumb-5.png";
-import thumb7 from "@/assets/testimonial-thumb-7.jpeg";
+import thumb6 from "@/assets/testimonial-thumb-6.png";
+import thumb7 from "@/assets/testimonial-thumb-7.png";
 
 const videos = [
   {
@@ -48,6 +49,14 @@ const videos = [
     thumbnail: thumb5,
     useModal: true,
     videoSrc: undefined as string | undefined,
+  },
+  {
+    title: "Client Testimonial 6",
+    description: "Real results from real business owners — see how we helped them secure the funding they needed.",
+    embedUrl: "",
+    thumbnail: thumb6,
+    useModal: true,
+    videoSrc: "/videos/testimonial-6.mp4",
   },
   {
     title: "Client Testimonial 7",
